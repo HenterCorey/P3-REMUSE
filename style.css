@@ -1,0 +1,283 @@
+html {
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+body {
+	margin: 0;
+}
+* {
+	font-family: "GB2312"   /*华康圆体;*/
+}
+/*....................................................................下面是全部动画效果*/
+@keyframes logo {    /*头像闪烁动画效果*/
+	from {box-shadow: #92C7F2 0 0 0 0}
+	25% {box-shadow: #92C7F2 0 0 2px 2px}
+	50% {box-shadow: #92C7F2 0 0 5px 5px}
+	75% {box-shadow: #92C7F2 0 0 2px 2px}
+	to {box-shadow: #92C7F2 0 0 0 0}
+}
+@keyframes dot {    /*圆点闪烁动画效果*/
+	from {box-shadow: #92C7F2 0 0 0 0}
+	25% {box-shadow: #92C7F2 0 0 2px 2px}
+	50% {box-shadow: #92C7F2 0 0 3px 3px}
+	75% {box-shadow: #92C7F2 0 0 2px 2px}
+	to {box-shadow: #92C7F2 0 0 0 0}
+}
+@keyframes percent {      /*进度条第一帧*/
+    0% {
+        transform: scaleX(0);
+    }
+}
+/*..................................................................上面是全部动画效果*/
+
+
+/*..........................................................................................以下是个人资料部分样式表*/
+
+.header,.footer {
+	flex: 1;
+}
+
+.header {              /*头部布局、背景*/
+	background-color: #188eee;
+	background-image: url(http://coding.imweb.io/img/project/resume/bg.png);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.header-container {      /*主体个人信息包裹*/
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.name,.motto,.information-text {    /*头部文字颜色*/
+	color: white;
+}
+.logo {                 /*头像属性*/
+	background-color: white;
+	border-radius: 50%;
+	width: 80px;
+	height: 80px;
+	box-shadow: #92C7F2 0 0 0 5px;
+}
+.logo:hover {              /*引入鼠标滑过头像动画*/
+	animation: logo 1s infinite;
+}
+.name {             /*姓名*/
+	font-size: 22px;
+	margin: 10px auto 10px;
+}
+.motto {            /*座右铭*/
+	font-size: 15px;
+	margin: 0;
+}
+.link {                   /*联系方式布局*/
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	font-size: 14px;
+}
+.link-mail,.link-phone,.link-github {   /*联系方式上下外边距*/
+	margin: 10px 0;
+}
+
+.link-mail::before {                  /*引入联系方式前面伪元素图标*/
+	font-size: 14px;
+	font-family: 'icomoon';
+	content: "\ea84";
+}
+.link-phone::before {                     /*引入联系方式前面伪元素图标*/
+	font-size: 14px;
+	font-family: 'icomoon';
+	content: "\e942";
+}
+.link-github::before {                       /*引入联系方式前面伪元素图标*/
+	font-size: 14px;
+	font-family: 'icomoon';
+	content: "\eab0";
+}
+.link-mail::before,.link-phone::before,.link-github::before {           /*伪元素属性*/
+	border: 1px white solid;
+	border-radius: 50%;
+	color: white;
+	padding: 4px;
+	margin-right: 5px;
+}
+
+.information {                 /*个人信息布局、属性*/
+	display: flex;
+	flex-direction: column;
+	border: 1px solid #4169E1;
+	padding: 5px;
+	border-radius: 5px;
+}
+.information-item {                 /*个人信息布局、属性*/
+	display: flex;
+	flex-direction: row;
+	width: 270px;
+}
+.information-text {              /*个人信息布局、属性*/
+	flex: 1;
+	font-size: 13px;
+	padding: 5px 0;
+}
+/*..........................................................................................以上是个人资料部分样式表*/
+
+
+
+/*..........................................................................................以下是个人经历、能力部分样式表*/
+.footer {
+	background-color: #F5F5F5;   /*整体背景色*/
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.through,.long {     /*两大部分外边距*/
+	margin: 20px 0;
+}
+.title {             /*标题文本*/
+	display: block;
+	color: #188eee;
+	margin: 0;
+	padding: 16px 0;
+	position: relative;
+	text-align: center
+}
+.title::before,.title::after {    /*标题文本伪元素属性*/
+	content: "";
+	background: #999;
+	position: absolute;
+	top: 50%;
+	height: 1px;
+	width: 40%;
+}
+.title::before {     /*伪元素定位*/
+	left: 0;
+}
+.title::after {      /*伪元素定位*/
+	right: 0;
+}
+.through,.through-item,.long,.long-item{   /*整体flex布局*/
+	display: flex;
+	flex-direction: column;
+}
+.through-item {        /*工作经历上下边距*/
+	margin: 10px 0;
+}
+.through-text {       /*工作经历*/
+	font-size: 15px;
+	margin-bottom: 3px;
+}
+.through-text-end {      /*工作经历详细说明属性*/
+	font-size: 12px;
+}
+.dot {                         /*圆点*/
+	width: 10px;
+	height: 10px;
+	border-radius: 50px;
+	background: #188eee;
+	box-shadow: #92C7F2 0 0 0 3px;
+}
+.through-item:hover .dot {                   /*引入闪烁圆点动画*/
+		animation: dot 1s infinite;
+}
+.through {                               /*父元素相对定位*/
+	position: relative;
+}
+
+.through-item::before {                            /*个人经历伪元素*/
+	content: "";
+	height: 100%;
+	width: 1px;
+	background: linear-gradient(to bottom ,#ccc,transparent 95%);
+	position: absolute;
+	top: 25px;
+	left: 29px;
+}
+.through-item {
+	margin-left: 50px;
+}
+.dot {                                 /*圆点定位*/
+	position: relative;
+	left: -25px;
+	top: 15px;
+	z-index: 1;
+}
+.long {                   /*特长盒子属性*/
+	padding: 0 10px;
+}
+.long-text{                   /*字号*/
+	font-size: 15px;
+}
+.long-text2 {                  /*字号*/
+	font-size: 12px;
+}
+.long-progress {                  /*进度条背景*/
+	width: 100%;
+	height: 5px;
+	background: #ccc;
+	border-radius: 5px;
+	position: relative;
+}
+.long-text,.long-progress {
+	margin: 3px 0;
+}
+.percent {                                 /*进度条上层结构*/
+	position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #117ad4 18%, #188eee, #10b1ed) no-repeat;
+    top: 0;
+    left: 0;
+    border-radius: 5px;
+    transform-origin: left top;
+}
+.long-item:first-child  .percent{
+	transform: scaleX(0.2);
+}
+.long-item:nth-child(2) .percent{
+    transform: scaleX(0.9);
+}
+.long-item:nth-child(3) .percent{
+    transform: scaleX(0.5);
+}
+.long-item:hover .percent{                   /*进度条动画引入*/
+    animation: percent 0.6s both;
+}
+
+
+.long-item {                          /*父元素相对定位*/
+	position: relative;
+}
+.tips {                            /*技能特长右侧小tips*/
+	font-size: 10px;
+	color: #999;
+	border: #999 1px solid;
+	border-radius: 10px;
+	width: 23px;
+	align-self: flex-end;
+	top: 5px;
+	position: absolute;
+	text-align: center;
+}
+
+/*..................................................................下面是响应式-媒体查询*/
+@media screen and (max-width: 768px){
+	.container {            /*响应式布局*/
+	display: flex;
+	flex-direction: column;
+}
+}
+@media screen and (min-width: 768px){
+	.container {            /*响应式布局*/
+	display: flex;
+	flex-direction: row;
+}
+}
+@media screen and (min-height: 550px){
+	.header {                                 /*响应式布局*/
+    height: 100vh;
+}
+}
